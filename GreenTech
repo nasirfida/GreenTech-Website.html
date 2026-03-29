@@ -1,0 +1,1818 @@
+<!DOCTYPE html>
+<html lang="en-CA">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GreenTech Kitchen & Bath | Toronto & GTA Renovation Experts</title>
+    <meta name="description" content="Licensed kitchen & bath renovation contractors serving Toronto, Mississauga, Brampton. Quality renovations with Canadian building standards. Free estimates.">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* ===== CANADIAN STYLE VARIABLES ===== */
+        :root {
+            --canada-red: #D80621;
+            --maple-red: #FF5A5F;
+            --forest-green: #00a79d;
+            --granite-gray: #2D3748;
+            --snow-white: #FFFFFF;
+            --arctic-blue: #F0F8FF;
+            --winter-gray: #E5E7EB;
+            --gold-accent: #D4AF37;
+        }
+        
+        /* ===== RESET & BASE ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 100px;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--granite-gray);
+            line-height: 1.6;
+            padding-top: 145px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* ===== CANADA BANNER ===== */
+        .canada-banner {
+            background: linear-gradient(90deg, var(--canada-red), #b3051b);
+            color: var(--snow-white);
+            padding: 8px 0;
+            text-align: center;
+            font-size: 15px;
+            font-weight: 500;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1001;
+            transition: transform 0.3s ease;
+        }
+        
+        .canada-banner.hidden {
+            transform: translateY(-100%);
+        }
+        
+        .canada-banner i {
+            margin: 0 8px;
+            color: var(--snow-white);
+        }
+        
+        /* ===== HEADER ===== */
+        header {
+            background: var(--snow-white);
+            padding: 10px 0;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.1);
+            position: fixed;
+            top: 45px;
+            width: 100%;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+        
+        header.scrolled {
+            padding: 10px 0;
+            top: 0;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            transition: all 0.3s ease;
+        }
+        
+        header.scrolled .logo {
+            gap: 10px;
+        }
+        
+        .logo-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--forest-green);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--snow-white);
+            font-size: 24px;
+            transition: all 0.3s ease;
+        }
+        
+        header.scrolled .logo-icon {
+            width: 40px;
+            height: 40px;
+            font-size: 20px;
+        }
+        
+        .logo-text h1 {
+            color: var(--forest-green);
+            font-size: 28px;
+            margin: 0;
+            transition: all 0.3s ease;
+        }
+        
+        header.scrolled .logo-text h1 {
+            font-size: 22px;
+        }
+        
+        .logo-text p {
+            color: var(--granite-gray);
+            margin: 0;
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+        
+        header.scrolled .logo-text p {
+            font-size: 12px;
+        }
+        
+        /* Mobile Menu Button */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 24px;
+            color: var(--granite-gray);
+            cursor: pointer;
+            padding: 10px;
+            z-index: 1002;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+            transition: all 0.3s ease;
+        }
+        
+        header.scrolled nav ul {
+            gap: 20px;
+        }
+        
+        nav a {
+            color: var(--granite-gray);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+            font-size: 16px;
+            padding: 5px 0;
+            position: relative;
+        }
+        
+        header.scrolled nav a {
+            font-size: 14px;
+        }
+        
+        nav a:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--canada-red);
+            transition: width 0.3s;
+        }
+        
+        nav a:hover:after {
+            width: 100%;
+        }
+        
+        nav a:hover {
+            color: var(--canada-red);
+        }
+        
+        .phone-button {
+            background: var(--canada-red);
+            color: var(--snow-white);
+            padding: 12px 25px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s;
+            white-space: nowrap;
+        }
+        
+        header.scrolled .phone-button {
+            padding: 10px 20px;
+            font-size: 14px;
+        }
+        
+        .phone-button:hover {
+            transform: translateY(-3px);
+            color: var(--snow-white);
+            box-shadow: 0 5px 15px rgba(216, 6, 33, 0.3);
+        }
+        
+        /* Mobile Phone Icon Only */
+        .phone-icon {
+            display: none;
+            background: var(--canada-red);
+            color: var(--snow-white);
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            font-size: 18px;
+            transition: all 0.3s;
+        }
+        
+        .phone-icon:hover {
+            transform: scale(1.1);
+            box-shadow: 0 5px 15px rgba(216, 6, 33, 0.3);
+        }
+        
+        /* ===== HERO SECTION ===== */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                        url('https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?auto=format&fit=crop&w=1600&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: var(--snow-white);
+            padding: 150px 0 120px;
+            text-align: center;
+            margin-top: -145px;
+        }
+        
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+            animation: fadeInUp 1s ease-out;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .hero h1 {
+            font-size: 52px;
+            margin-bottom: 25px;
+            color: var(--snow-white);
+            line-height: 1.9;
+            padding: 120px 0 100px;
+        }
+        
+        .hero-tagline {
+            font-size: 22px;
+            margin-bottom: 50px;
+            color: rgba(255, 255, 255, 0.95);
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            padding: 18px 40px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 17px;
+            text-decoration: none;
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            min-width: 220px;
+            justify-content: center;
+        }
+        
+        .btn-primary {
+            background: var(--canada-red);
+            color: var(--snow-white);
+            border: 2px solid var(--canada-red);
+        }
+        
+        .btn-primary:hover {
+            background: transparent;
+            color: var(--snow-white);
+            border-color: var(--snow-white);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(216, 6, 33, 0.2);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: var(--snow-white);
+            border: 2px solid var(--snow-white);
+        }
+        
+        .btn-secondary:hover {
+            background: var(--snow-white);
+            color: var(--granite-gray);
+            transform: translateY(-5px);
+        }
+        
+        /* ===== TRUST BADGES ===== */
+        .trust-section {
+            padding: 80px 0;
+            background: var(--arctic-blue);
+        }
+        
+        .trust-badges {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            text-align: center;
+        }
+        
+        .badge {
+            background: var(--snow-white);
+            padding: 35px 25px;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+            transition: all 0.3s;
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+        
+        .badge:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+        }
+        
+        .badge-icon {
+            width: 80px;
+            height: 80px;
+            background: rgba(216, 6, 33, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            font-size: 32px;
+            color: var(--canada-red);
+            transition: all 0.3s;
+        }
+        
+        .badge:hover .badge-icon {
+            background: var(--canada-red);
+            color: var(--snow-white);
+            transform: scale(1.1);
+        }
+        
+        /* ===== SERVICE AREAS ===== */
+        .areas-section {
+            padding: 80px 0;
+            text-align: center;
+            background: var(--snow-white);
+        }
+        
+        .section-title {
+            font-size: 42px;
+            margin-bottom: 20px;
+            color: var(--granite-gray);
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: var(--canada-red);
+            border-radius: 2px;
+        }
+        
+        .section-subtitle {
+            color: var(--granite-gray);
+            margin-bottom: 50px;
+            font-size: 20px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .cities-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 40px;
+        }
+        
+        .city {
+            background: var(--winter-gray);
+            padding: 20px;
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: 18px;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+        
+        .city i {
+            color: var(--canada-red);
+            font-size: 20px;
+        }
+        
+        .city:hover {
+            background: var(--canada-red);
+            color: var(--snow-white);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(216, 6, 33, 0.2);
+        }
+        
+        .city:hover i {
+            color: var(--snow-white);
+        }
+        
+        /* ===== SERVICES ===== */
+        .services {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+        
+        .service-card {
+            background: var(--snow-white);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            transition: all 0.4s;
+            border: 1px solid var(--winter-gray);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+        }
+        
+        .service-image {
+            height: 250px;
+            background-size: cover;
+            background-position: center;
+            transition: transform 0.5s;
+        }
+        
+        .service-card:hover .service-image {
+            transform: scale(1.05);
+        }
+        
+        .service-content {
+            padding: 35px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .service-content h3 {
+            color: var(--granite-gray);
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+        
+        .service-content p {
+            color: var(--granite-gray);
+            margin-bottom: 25px;
+            line-height: 1.7;
+            flex-grow: 1;
+        }
+        
+        .service-features {
+            list-style: none;
+            margin-top: 20px;
+        }
+        
+        .service-features li {
+            padding: 8px 0;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 15px;
+        }
+        
+        .service-features li i {
+            color: var(--forest-green);
+            font-size: 16px;
+        }
+        
+        /* ===== PROCESS ===== */
+        .process-section {
+            padding: 100px 0;
+            background: var(--arctic-blue);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .process-section:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, var(--canada-red), var(--forest-green));
+        }
+        
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 35px;
+            margin-top: 60px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .step {
+            background: var(--snow-white);
+            padding: 35px 30px;
+            border-radius: 15px;
+            text-align: center;
+            position: relative;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            transition: all 0.3s;
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+        
+        .step:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+        }
+        
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--canada-red), #ff2e4e);
+            color: var(--snow-white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 26px;
+            font-weight: 700;
+            margin: 0 auto 25px;
+            box-shadow: 0 5px 15px rgba(216, 6, 33, 0.3);
+        }
+        
+        .step h3 {
+            color: var(--granite-gray);
+            margin-bottom: 15px;
+            font-size: 22px;
+        }
+        
+        .step p {
+            color: var(--granite-gray);
+            line-height: 1.7;
+        }
+        
+        /* ===== PORTFOLIO ===== */
+        .portfolio {
+            padding: 100px 0;
+            background: var(--snow-white);
+        }
+        
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            margin-top: 60px;
+        }
+        
+        .portfolio-item {
+            border-radius: 15px;
+            overflow: hidden;
+            position: relative;
+            height: 350px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+        }
+        
+        .portfolio-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+        
+        .portfolio-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s;
+        }
+        
+        .portfolio-item:hover img {
+            transform: scale(1.1);
+        }
+        
+        .portfolio-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0,0,0,0.9));
+            color: var(--snow-white);
+            padding: 25px;
+            transform: translateY(100%);
+            transition: transform 0.4s;
+        }
+        
+        .portfolio-item:hover .portfolio-overlay {
+            transform: translateY(0);
+        }
+        
+        .portfolio-overlay h4 {
+            font-size: 22px;
+            margin-bottom: 8px;
+            color: var(--snow-white);
+        }
+        
+        .portfolio-overlay p {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 16px;
+        }
+        
+        /* ===== TESTIMONIALS ===== */
+        .testimonials {
+            padding: 100px 0;
+            background: linear-gradient(135deg, var(--winter-gray) 0%, #dbe4e8 100%);
+            position: relative;
+        }
+        
+        .testimonials:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, var(--forest-green), var(--canada-red));
+        }
+        
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 35px;
+            margin-top: 60px;
+        }
+        
+        .testimonial-card {
+            background: var(--snow-white);
+            padding: 35px;
+            border-radius: 15px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+            transition: all 0.3s;
+            position: relative;
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+        
+        .testimonial-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+        }
+        
+        .testimonial-card:before {
+            content: '"';
+            position: absolute;
+            top: 20px;
+            left: 25px;
+            font-size: 80px;
+            color: var(--forest-green);
+            opacity: 0.2;
+            font-family: Georgia, serif;
+            line-height: 1;
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 25px;
+            position: relative;
+            padding-left: 20px;
+            font-size: 17px;
+            line-height: 1.7;
+            color: var(--granite-gray);
+        }
+        
+        .client-info {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            padding-top: 20px;
+            border-top: 1px solid var(--winter-gray);
+        }
+        
+        .client-avatar {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--forest-green), #00d9c5);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--snow-white);
+            font-weight: 700;
+            font-size: 22px;
+            flex-shrink: 0;
+        }
+        
+        .client-info h4 {
+            color: var(--granite-gray);
+            margin-bottom: 5px;
+            font-size: 20px;
+        }
+        
+        .client-info p {
+            color: var(--granite-gray);
+            font-size: 15px;
+            opacity: 0.8;
+        }
+        
+        /* ===== CONTACT ===== */
+        .contact {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%);
+            color: var(--snow-white);
+        }
+        
+        .contact .section-title,
+        .contact .section-subtitle {
+            color: var(--snow-white);
+        }
+        
+        .contact .section-title:after {
+            background: var(--canada-red);
+        }
+        
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            margin-top: 60px;
+        }
+        
+        .contact-info {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 45px;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .contact-form {
+            background: var(--snow-white);
+            padding: 45px;
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+        }
+        
+        .contact-form h3 {
+            color: var(--granite-gray);
+            margin-bottom: 30px;
+            font-size: 28px;
+        }
+        
+        .form-group {
+            margin-bottom: 25px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: 600;
+            color: var(--granite-gray);
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 17px 20px;
+            border: 1px solid var(--winter-gray);
+            border-radius: 10px;
+            font-family: inherit;
+            font-size: 16px;
+            transition: all 0.3s;
+        }
+        
+        .form-control:focus {
+            outline: none;
+            border-color: var(--forest-green);
+            box-shadow: 0 0 0 3px rgba(0, 167, 157, 0.2);
+        }
+        
+        textarea.form-control {
+            min-height: 160px;
+            resize: vertical;
+        }
+        
+        /* ===== FOOTER ===== */
+        footer {
+            background: #1a202c;
+            color: var(--snow-white);
+            padding: 70px 0 30px;
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 50px;
+            margin-bottom: 50px;
+        }
+        
+        .footer-col h3 {
+            color: var(--snow-white);
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 12px;
+            font-size: 22px;
+        }
+        
+        .footer-col h3:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: var(--canada-red);
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .footer-links a:hover {
+            color: var(--snow-white);
+            padding-left: 8px;
+        }
+        
+        .footer-links a i {
+            width: 20px;
+            text-align: center;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 25px;
+        }
+        
+        .social-link {
+            width: 45px;
+            height: 45px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--snow-white);
+            transition: all 0.3s;
+            font-size: 18px;
+        }
+        
+        .social-link:hover {
+            background: var(--canada-red);
+            transform: translateY(-5px);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 40px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 15px;
+        }
+        
+        /* ===== SCROLL TO TOP BUTTON ===== */
+        .scroll-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: var(--canada-red);
+            color: var(--snow-white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s;
+            z-index: 999;
+            box-shadow: 0 5px 15px rgba(216, 6, 33, 0.3);
+            border: none;
+        }
+        
+        .scroll-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .scroll-to-top:hover {
+            transform: translateY(-5px);
+            background: #ff2e4e;
+        }
+        
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 1200px) {
+            .container {
+                padding: 0 30px;
+            }
+        }
+        
+        @media (max-width: 992px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 50px;
+            }
+            
+            .hero h1 {
+                font-size: 44px;
+            }
+            
+            .section-title {
+                font-size: 36px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            body {
+                padding-top: 185px;
+            }
+            
+            header {
+                top: 45px;
+                padding: 12px 0;
+            }
+            
+            header.scrolled {
+                top: 0;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .phone-button {
+                display: none;
+            }
+            
+            .phone-icon {
+                display: flex;
+            }
+            
+            #mainNav {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: var(--snow-white);
+                padding: 20px;
+                box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+                border-radius: 0 0 10px 10px;
+                z-index: 999;
+            }
+            
+            #mainNav.active {
+                display: block;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                gap: 0;
+                width: 100%;
+            }
+            
+            nav li {
+                border-bottom: 1px solid var(--winter-gray);
+                width: 100%;
+                text-align: center;
+            }
+            
+            nav a {
+                display: block;
+                padding: 18px 0;
+                width: 100%;
+                font-size: 17px;
+            }
+            
+            nav a:after {
+                display: none;
+            }
+            
+            .header-container {
+                flex-wrap: wrap;
+                gap: 15px;
+            }
+            
+            .logo {
+                order: 1;
+            }
+            
+            .mobile-menu-btn {
+                order: 2;
+            }
+            
+            .phone-icon {
+                order: 3;
+            }
+            
+            #mainNav {
+                order: 4;
+                width: 100%;
+                margin-top: 15px;
+            }
+            
+            .hero {
+                padding: 120px 0 100px;
+                margin-top: -185px;
+            }
+            
+            .hero h1 {
+                font-size: 36px;
+            }
+            
+            .hero-tagline {
+                font-size: 18px;
+            }
+            
+            .btn {
+                padding: 16px 30px;
+                min-width: 100%;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+                align-items: stretch;
+                gap: 15px;
+            }
+            
+            .services-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            
+            .portfolio-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .section-title {
+                font-size: 32px;
+            }
+            
+            .section-subtitle {
+                font-size: 18px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .container {
+                padding: 0 20px;
+            }
+            
+            .hero h1 {
+                font-size: 30px;
+            }
+            
+            .section-title {
+                font-size: 28px;
+            }
+            
+            .cities-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .contact-info,
+            .contact-form {
+                padding: 30px 25px;
+            }
+        }
+        
+        /* ===== ANIMATIONS ===== */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .fade-in {
+            animation: fadeIn 0.8s ease-out;
+        }
+    </style>
+</head>
+<body>
+    <!-- Canada Banner -->
+    <div class="canada-banner">
+        <i class="fas fa-maple-leaf"></i>
+        LICENSED & INSURED CONTRACTOR | SERVING GTA SINCE 2023 | FREE ESTIMATES
+        <i class="fas fa-maple-leaf"></i>
+    </div>
+    
+    <!-- Header -->
+    <header id="mainHeader">
+        <div class="container header-container">
+            <div class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-leaf"></i>
+                </div>
+                <div class="logo-text">
+                    <h1>GreenTech</h1>
+                    <p>Kitchen & Bath Renovations</p>
+                </div>
+            </div>
+            
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <a href="tel:+16477866310" class="phone-icon">
+                <i class="fas fa-phone"></i>
+            </a>
+            
+            <nav id="mainNav">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#process">Process</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#testimonials">Reviews</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            
+            <a href="tel:+16477866310" class="phone-button">
+                <i class="fas fa-phone"></i> (647) 786-6310
+            </a>
+        </div>
+    </header>
+    
+    <!-- Scroll to Top Button -->
+    <button class="scroll-to-top" id="scrollToTop">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+    
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container hero-content fade-in">
+            <h1>Canadian Renovation Excellence</h1>
+            <p class="hero-tagline">Licensed kitchen & bath renovation specialists serving Toronto, Mississauga, Brampton & GTA with premium quality and unmatched professionalism.</p>
+            <div class="hero-buttons">
+                <a href="#contact" class="btn btn-primary">
+                    <i class="fas fa-calendar-check"></i> GET FREE ESTIMATE
+                </a>
+                <a href="tel:+16477866310" class="btn btn-secondary">
+                    <i class="fas fa-phone"></i> CALL NOW
+                </a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Trust Badges -->
+    <section class="trust-section">
+        <div class="container">
+            <div class="trust-badges">
+                <div class="badge">
+                    <div class="badge-icon">
+                        <i class="fas fa-file-contract"></i>
+                    </div>
+                    <h3>Licensed & Insured</h3>
+                    <p>Fully licensed contractor with insurance for your peace of mind.</p>
+                </div>
+                
+                <div class="badge">
+                    <div class="badge-icon">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <h3>Quality Craftsmanship</h3>
+                    <p>Professional workmanship with attention to detail in every project.</p>
+                </div>
+                
+                <div class="badge">
+                    <div class="badge-icon">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <h3>Free Estimates</h3>
+                    <p>No-obligation detailed quotes with completely transparent pricing.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Service Areas -->
+    <section class="areas-section">
+        <div class="container">
+            <h2 class="section-title">Proudly Serving The GTA</h2>
+            <p class="section-subtitle">Professional renovation services across Greater Toronto Area with same-day quotes</p>
+            
+            <div class="cities-grid">
+                <div class="city"><i class="fas fa-map-marker-alt"></i> Toronto</div>
+                <div class="city"><i class="fas fa-map-marker-alt"></i> Mississauga</div>
+                <div class="city"><i class="fas fa-map-marker-alt"></i> Brampton</div>
+                <div class="city"><i class="fas fa-map-marker-alt"></i> Oakville</div>
+                <div class="city"><i class="fas fa-map-marker-alt"></i> Milton</div>
+                <div class="city"><i class="fas fa-map-marker-alt"></i> Burlington</div>
+                <div class="city"><i class="fas fa-map-marker-alt"></i> Hamilton</div>
+                <div class="city"><i class="fas fa-map-marker-alt"></i> Waterdown</div>
+                <div class="city"><i class="fas fa-map-marker-alt"></i> Vaughan</div>
+                <div class="city"><i class="fas fa-map-marker-alt"></i> Richmond Hill</div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Services -->
+    <section class="services" id="services">
+        <div class="container">
+            <h2 class="section-title">Our Premium Services</h2>
+            <p class="section-subtitle">Quality renovations with attention to detail in every project we undertake</p>
+            
+            <div class="services-grid">
+                <!-- Service 1 -->
+                <div class="service-card">
+                    <div class="service-image" style="background-image: url('https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?auto=format&fit=crop&w=800&q=80');"></div>
+                    <div class="service-content">
+                        <h3>Complete Kitchen Renovation</h3>
+                        <p>Transform your kitchen with custom cabinetry, premium quartz countertops, and energy-efficient smart appliances.</p>
+                        <ul class="service-features">
+                            <li><i class="fas fa-check"></i> Custom cabinetry</li>
+                            <li><i class="fas fa-check"></i> Quartz or granite countertops</li>
+                            <li><i class="fas fa-check"></i> Energy-star appliances</li>
+                            <li><i class="fas fa-check"></i> Permit assistance included</li>
+                            <li><i class="fas fa-check"></i> Smart home integration</li>
+                            <li><i class="fas fa-check"></i> LED lighting solutions</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Service 2 -->
+                <div class="service-card">
+                    <div class="service-image" style="background-image: url('https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=800&q=80');"></div>
+                    <div class="service-content">
+                        <h3>Bathroom Remodeling</h3>
+                        <p>Luxury bathroom transformations with waterproofing to code, modern fixtures, and spa-like features for ultimate relaxation.</p>
+                        <ul class="service-features">
+                            <li><i class="fas fa-check"></i> Waterproofing to code</li>
+                            <li><i class="fas fa-check"></i> Heated flooring options</li>
+                            <li><i class="fas fa-check"></i> Frameless glass showers</li>
+                            <li><i class="fas fa-check"></i> Smart bathroom technology</li>
+                            <li><i class="fas fa-check"></i> Premium tile selection</li>
+                            <li><i class="fas fa-check"></i> Ventilation systems</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Service 3 -->
+                <div class="service-card">
+                    <div class="service-image" style="background-image: url('https://plus.unsplash.com/premium_photo-1673014202349-38687dd47f94?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');"></div>
+                    <div class="service-content">
+                        <h3>Basement Development</h3>
+                        <p>Maximize your living space with professionally developed basements including legal suites and entertainment areas.</p>
+                        <ul class="service-features">
+                            <li><i class="fas fa-check"></i> Moisture control systems</li>
+                            <li><i class="fas fa-check"></i> Legal suite development</li>
+                            <li><i class="fas fa-check"></i> Home theater installations</li>
+                            <li><i class="fas fa-check"></i> Building code compliance</li>
+                            <li><i class="fas fa-check"></i> Soundproofing solutions</li>
+                            <li><i class="fas fa-check"></i> Custom bar installations</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Process -->
+    <section class="process-section" id="process">
+        <div class="container">
+            <h2 class="section-title">Our Canadian Renovation Process</h2>
+            <p class="section-subtitle">Transparent, professional, and hassle-free experience from start to finish</p>
+            
+            <div class="process-steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Free Consultation</h3>
+                    <p>On-site assessment and detailed estimate with completely transparent pricing.</p>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Design & Planning</h3>
+                    <p>3D visualizations and material selection at local premium suppliers.</p>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Permit Assistance</h3>
+                    <p>We handle all required permits and coordinate city inspections.</p>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h3>Professional Execution</h3>
+                    <p>Skilled tradespeople with attention to detail and quality craftsmanship.</p>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">5</div>
+                    <h3>Final Inspection</h3>
+                    <p>City inspection coordination and detailed final walkthrough with you.</p>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">6</div>
+                    <h3>Project Completion</h3>
+                    <p>Final cleanup and project handover with all documentation provided.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Portfolio -->
+    <section class="portfolio" id="portfolio">
+        <div class="container">
+            <h2 class="section-title">Our Recent Projects</h2>
+            <p class="section-subtitle">See the transformations we've created across the Greater Toronto Area</p>
+            
+            <div class="portfolio-grid">
+                <div class="portfolio-item">
+                    <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?auto=format&fit=crop&w=600&q=80" alt="Modern Kitchen Toronto">
+                    <div class="portfolio-overlay">
+                        <h4>Modern Kitchen - Toronto</h4>
+                        <p>Complete renovation with quartz countertops and smart appliances</p>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item">
+                    <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=600&q=80" alt="Luxury Bathroom Mississauga">
+                    <div class="portfolio-overlay">
+                        <h4>Luxury Bathroom - Mississauga</h4>
+                        <p>Spa-like retreat with heated floors and premium fixtures</p>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item">
+                    <img src="https://plus.unsplash.com/premium_photo-1673014202349-38687dd47f94?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Basement Development Brampton">
+                    <div class="portfolio-overlay">
+                        <h4>Basement Suite - Brampton</h4>
+                        <p>Legal rental suite development with home theater</p>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item">
+                    <img src="https://images.unsplash.com/photo-1616594039964-ae9021a400a0?auto=format&fit=crop&w=600&q=80" alt="Custom Wardrobes Vaughan">
+                    <div class="portfolio-overlay">
+                        <h4>Custom Wardrobes - Vaughan</h4>
+                        <p>Built-in storage solutions with premium finishes</p>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item">
+                    <img src="https://images.unsplash.com/photo-1565538810643-b5bdb714032a?auto=format&fit=crop&w=600&q=80" alt="Home Office Markham">
+                    <div class="portfolio-overlay">
+                        <h4>Home Office - Hamilton</h4>
+                        <p>Professional workspace with custom cabinetry</p>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item">
+                    <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=600&q=80" alt="Laundry Room Richmond Hill">
+                    <div class="portfolio-overlay">
+                        <h4>Laundry Room - Richmond Hill</h4>
+                        <p>Functional design with premium storage solutions</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Testimonials -->
+    <section class="testimonials" id="testimonials">
+        <div class="container">
+            <h2 class="section-title">What Our Clients Say</h2>
+            <p class="section-subtitle">Trusted by homeowners across the Greater Toronto Area for quality renovations</p>
+            
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        "GreenTech transformed our 1980s kitchen into a modern masterpiece. They handled all permits and inspections seamlessly. Their attention to detail was exceptional and we're thrilled with the results."
+                    </div>
+                    <div class="client-info">
+                        <div class="client-avatar">JS</div>
+                        <div>
+                            <h4>John Smith</h4>
+                            <p>Toronto, ON | Kitchen Renovation</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        "Our bathroom renovation exceeded all expectations. The team was punctual, clean, and respectful of our home throughout the entire process. The heated floors they installed have been a game changer for Canadian winters!"
+                    </div>
+                    <div class="client-info">
+                        <div class="client-avatar">SM</div>
+                        <div>
+                            <h4>Sarah Miller</h4>
+                            <p>Mississauga, ON | Bathroom Remodel</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        "As first-time renovators, we were nervous about the process. GreenTech guided us through every step, from design to final inspection. Their transparent pricing meant no surprises, and the quality is outstanding."
+                    </div>
+                    <div class="client-info">
+                        <div class="client-avatar">RC</div>
+                        <div>
+                            <h4>Robert Chen</h4>
+                            <p>Markham, ON | Basement Development</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Contact -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2 class="section-title">Get Your Free Estimate</h2>
+            <p class="section-subtitle">Contact us today for a no-obligation consultation and detailed quote</p>
+            
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h3>Contact Information</h3>
+                    
+                    <div style="margin: 30px 0;">
+                        <h4 style="margin-bottom: 15px; display: flex; align-items: center; gap: 10px;">
+                            <i class="fas fa-phone"></i> Phone
+                        </h4>
+                        <p style="font-size: 24px; margin: 10px 0; font-weight: 700;">(647) 786-6310</p>
+                        <p style="margin: 5px 0; opacity: 0.9;">7 days a week: 8:00 AM - 7:00 PM</p>
+                    </div>
+                    
+                    <div style="margin: 30px 0;">
+                        <h4 style="margin-bottom: 15px; display: flex; align-items: center; gap: 10px;">
+                            <i class="fas fa-envelope"></i> Email
+                        </h4>
+                        <p style="margin: 8px 0; font-size: 17px;">info@greentechcanada.ca</p>
+                        <p style="margin: 8px 0; font-size: 17px;">estimates@greentechcanada.ca</p>
+                        <p style="margin: 8px 0; font-size: 17px;">service@greentechcanada.ca</p>
+                    </div>
+                    
+                    <div style="margin: 30px 0;">
+                        <h4 style="margin-bottom: 15px; display: flex; align-items: center; gap: 10px;">
+                            <i class="fas fa-map-marker-alt"></i> Our Locations
+                        </h4>
+                        <p style="margin: 8px 0;">3465 Platinum Dr Unit 238, Mississauga, ON L5M 2S1</p>
+                        <p style="margin: 8px 0;">49 Redwing Rd, Hamilton, ON L9A 3Y8</p>
+                        <p style="margin: 8px 0; opacity: 0.9;">Serving all GTA & surrounding areas</p>
+                    </div>
+                    
+                    <div class="social-links">
+                        <a href="https://facebook.com" class="social-link" title="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://instagram.com" class="social-link" title="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="mailto:info@greentechcanada.ca" class="social-link" title="Email">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <h3>Request a Consultation</h3>
+                    <form id="estimateForm">
+                        <div class="form-group">
+                            <label for="name">Full Name *</label>
+                            <input type="text" id="name" name="name" class="form-control" required placeholder="John Smith">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">Phone Number *</label>
+                            <input type="tel" id="phone" name="phone" class="form-control" required placeholder="(647) 786-6310">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" class="form-control" placeholder="john@example.com">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="service">Service Interested In *</label>
+                            <select id="service" name="service" class="form-control" required>
+                                <option value="">Select a service</option>
+                                <option value="kitchen">Kitchen Renovation</option>
+                                <option value="bathroom">Bathroom Remodeling</option>
+                                <option value="basement">Basement Development</option>
+                                <option value="full_home">Full Home Renovation</option>
+                                <option value="wardrobe">Custom Wardrobes</option>
+                                <option value="office">Home Office</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="city">City *</label>
+                            <select id="city" name="city" class="form-control" required>
+                                <option value="">Select your city</option>
+                                <option value="toronto">Toronto</option>
+                                <option value="mississauga">Mississauga</option>
+                                <option value="brampton">Brampton</option>
+                                <option value="vaughan">Vaughan</option>
+                                <option value="markham">Markham</option>
+                                <option value="richmond_hill">Richmond Hill</option>
+                                <option value="oakville">Oakville</option>
+                                <option value="burlington">Burlington</option>
+                                <option value="hamilton">Hamilton</option>
+                                <option value="other">Other GTA Area</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Project Details (Optional)</label>
+                            <textarea id="message" name="message" class="form-control" placeholder="Tell us about your project, timeline, and any specific requirements..."></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary" style="width: 100%; padding: 18px; font-size: 18px;">
+                            <i class="fas fa-paper-plane"></i> REQUEST FREE ESTIMATE
+                        </button>
+                        
+                        <p style="text-align: center; margin-top: 20px; color: var(--granite-gray); font-size: 14px;">
+                            <i class="fas fa-shield-alt"></i> Your information is secure and will never be shared with third parties.
+                        </p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>GreenTech</h3>
+                    <p style="margin-bottom: 20px; opacity: 0.9;">Premium kitchen and bath renovation specialists serving the Greater Toronto Area with quality craftsmanship and professional service.</p>
+                    <div class="social-links">
+                        <a href="https://facebook.com" class="social-link">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://instagram.com" class="social-link">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="mailto:info@greentechcanada.ca" class="social-link">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#home"><i class="fas fa-chevron-right"></i> Home</a></li>
+                        <li><a href="#services"><i class="fas fa-chevron-right"></i> Our Services</a></li>
+                        <li><a href="#process"><i class="fas fa-chevron-right"></i> Our Process</a></li>
+                        <li><a href="#portfolio"><i class="fas fa-chevron-right"></i> Portfolio</a></li>
+                        <li><a href="#testimonials"><i class="fas fa-chevron-right"></i> Testimonials</a></li>
+                        <li><a href="#contact"><i class="fas fa-chevron-right"></i> Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Our Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="#services"><i class="fas fa-chevron-right"></i> Kitchen Renovation</a></li>
+                        <li><a href="#services"><i class="fas fa-chevron-right"></i> Bathroom Remodeling</a></li>
+                        <li><a href="#services"><i class="fas fa-chevron-right"></i> Basement Development</a></li>
+                        <li><a href="#services"><i class="fas fa-chevron-right"></i> Custom Wardrobes</a></li>
+                        <li><a href="#services"><i class="fas fa-chevron-right"></i> Home Office Design</a></li>
+                        <li><a href="#services"><i class="fas fa-chevron-right"></i> Laundry Room Reno</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Contact Info</h3>
+                    <ul class="footer-links">
+                        <li><a href="tel:+16477866310"><i class="fas fa-phone"></i> (647) 786-6310</a></li>
+                        <li><a href="mailto:info@greentechcanada.ca"><i class="fas fa-envelope"></i> info@greentechcanada.ca</a></li>
+                        <li><i class="fas fa-map-marker-alt"></i> Mississauga & Hamilton</li>
+                        <li><i class="fas fa-clock"></i> Mon-Sun: 8AM-7PM</li>
+                        <li><i class="fas fa-file-contract"></i> Licensed & Insured</li>
+                        <li><i class="fas fa-check-circle"></i> Free Estimates</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>© 2025 GreenTech Kitchen & Bath Renovations. All rights reserved. | Licensed Contractor #12345</p>
+                <p style="margin-top: 10px;">Website designed for premium user experience across all devices.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- JavaScript -->
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mainNav = document.getElementById('mainNav');
+        
+        if (mobileMenuBtn && mainNav) {
+            mobileMenuBtn.addEventListener('click', function() {
+                mainNav.classList.toggle('active');
+                const icon = this.querySelector('i');
+                if (mainNav.classList.contains('active')) {
+                    icon.classList.remove('fa-bars');
+                    icon.classList.add('fa-times');
+                } else {
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                }
+            });
+        }
+        
+        // Close mobile menu when clicking links
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', () => {
+                if (mainNav.classList.contains('active')) {
+                    mainNav.classList.remove('active');
+                    const icon = mobileMenuBtn.querySelector('i');
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                }
+            });
+        });
+        
+        // Header aur Canada Banner Scroll Effect
+        const header = document.getElementById('mainHeader');
+        const canadaBanner = document.querySelector('.canada-banner');
+        const scrollToTopBtn = document.getElementById('scrollToTop');
+        
+        window.addEventListener('scroll', function() {
+            const scrollPosition = window.scrollY;
+            
+            // Canada Banner: Jab scroll karen to hide ho jaye
+            if (scrollPosition > 100) {
+                canadaBanner.classList.add('hidden');
+                header.classList.add('scrolled');
+            } else {
+                canadaBanner.classList.remove('hidden');
+                header.classList.remove('scrolled');
+            }
+            
+            // Scroll to top button
+            if (scrollPosition > 500) {
+                scrollToTopBtn.classList.add('visible');
+            } else {
+                scrollToTopBtn.classList.remove('visible');
+            }
+        });
+        
+        // Scroll to top functionality
+        scrollToTopBtn.addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    e.preventDefault();
+                    
+                    // Close mobile menu if open
+                    if (mainNav.classList.contains('active')) {
+                        mainNav.classList.remove('active');
+                        const icon = mobileMenuBtn.querySelector('i');
+                        icon.classList.remove('fa-times');
+                        icon.classList.add('fa-bars');
+                    }
+                    
+                    // Calculate header height for offset
+                    const headerHeight = header.offsetHeight;
+                    const targetPosition = targetElement.offsetTop - headerHeight;
+                    
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Form submission with Formspree
+        const estimateForm = document.getElementById('estimateForm');
+        if (estimateForm) {
+            estimateForm.addEventListener('submit', async function(e) {
+                e.preventDefault();
+                
+                // Validation
+                const name = document.getElementById('name').value;
+                const phone = document.getElementById('phone').value;
+                const service = document.getElementById('service').value;
+                const city = document.getElementById('city').value;
+                if (!name || !phone || !service || !city) {
+                    alert('Please fill in all required fields.');
+                    return;
+                }
+                
+                // Send to Formspree
+                const formData = new FormData(estimateForm);
+                try {
+                    const response = await fetch('https://formspree.io/f/xwvwlkvz', {
+                        method: 'POST',
+                        body: formData,
+                        headers: { 'Accept': 'application/json' }
+                    });
+                    if (response.ok) {
+                        alert('Thank you! Your request has been sent. We will contact you soon.');
+                        estimateForm.reset();
+                    } else {
+                        const errorData = await response.json();
+                        alert('Oops! Something went wrong: ' + (errorData.error || 'Please try again later.'));
+                    }
+                } catch (error) {
+                    alert('Network error. Please check your connection.');
+                }
+            });
+        }
+        
+        // Initialize on load
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('GreenTech Kitchen & Bath website loaded successfully!');
+        });
+    </script>
+</body>
+</html>
